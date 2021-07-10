@@ -1,3 +1,22 @@
-<p>
-  sidebar works!
-</p>
+  <nav *ngIf="isShown" id="sidebar" ng-hide="sidebar">
+      <div class="sidebar-header">
+          <h3>TCC-GEN</h3>
+      </div>
+
+      <img src="face4.jpg" class="profile-image" alt="">
+
+      <ul class="list-unstyled components"> 
+          <li>
+              <a href="#">Dashboard</a>
+          </li>
+          <li>
+              <a href="#">Produtos</a>
+          </li>
+          <li>
+                <a href="#">Categorias</a>
+          </li>
+      </ul>
+  </nav>
+  <div *ngIf="isShown" id="sidebar2" ng-hide="sidebar"> 
+  </div>
+

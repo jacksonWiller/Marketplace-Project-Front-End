@@ -15,7 +15,25 @@ import { PerfilComponent } from './components/user/perfil/perfil.component';
 
 import { ContatosComponent } from './components/contatos/contatos.component';
 
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminProdutosComponent } from './components/admin/admin-produtos/admin-produtos.component';
+import { AdminProdutosListComponent } from './components/admin/admin-produtos/admin-produtos-list/admin-produtos-list.component';
+import { AdminProdutosDetailComponent } from './components/admin/admin-produtos/admin-produtos-detail/admin-produtos-detail.component';
+
 const routes: Routes = [
+  {
+    path: 'admin', component: AdminComponent,
+    children: [
+      {
+        path: 'produtos', component: AdminProdutosComponent,
+        children: [
+          { path: 'lista', component: AdminProdutosListComponent },
+          { path: 'detalhes', component: AdminProdutosDetailComponent }
+        ]
+      },
+      { path: 'categorias', component: RegistrationComponent },
+    ]
+  },
   {
     path: 'user', component: UserComponent,
     children: [

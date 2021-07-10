@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarModule } from 'ng-sidebar';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  isShown = true;
 
+
+  // tslint:disable-next-line:typedef
+  toggleShow() {
+    this.isShown = ! this.isShown;
+  }
+
+  // tslint:disable-next-line:typedef
   ngOnInit() {
   }
 
