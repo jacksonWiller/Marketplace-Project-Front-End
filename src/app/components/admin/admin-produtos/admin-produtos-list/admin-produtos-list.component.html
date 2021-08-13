@@ -29,10 +29,13 @@
               </a>
           </td>
           <td>{{produto.nome}}</td>
-          <td>1300,00</td>
-          <td>400</td>
-          <td>05/09/2021</td>
-          <td><i class="bi bi-check-lg"></i></td>
+          <td>{{produto.valor}}</td>
+          <td>{{produto.qtdEstoque}}</td>
+          <td>{{produto.dataAlteracao | DateFormatPipe}}</td>
+          <td>
+              <i *ngIf="produto.estado == true" class="bi bi-check-lg"></i>
+              <i *ngIf="produto.estado == false || null" class="bi bi-x-lg"></i>
+          </td>
           <td>
               <a href="#" class="btn btn-outline-primary">
                   <i class="bi bi-eye"></i>

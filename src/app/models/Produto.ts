@@ -5,9 +5,9 @@ export interface Produto {
     descricao: string;
     observacao: string;
     valor: number;
-    quantidadeEmEstoque: number;
+    qtdEstoque: number;
     estado: boolean;
-    dataDeCriacao: Date;
-    dataDeAlteracao: Date;
+    dataCadastro: Date;
+    dataAlteracao: Date;
     // produtosCategorias: Date;
 }
