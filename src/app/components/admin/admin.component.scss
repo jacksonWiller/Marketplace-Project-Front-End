@@ -7,6 +7,7 @@
 /* Grid */
 .grid {
 	display: grid;
+
 }
 
 .logo {
@@ -35,9 +36,9 @@
 
 .grid-template-areas-1 {
 	grid-template-areas:
-		"sidenav nav nav"
-		"sidenav content content"
-		"sidenav footer footer"
+		"sidenav nav ."
+		"sidenav content ."
+		"sidenav footer ."
 		;
 }
 
@@ -76,6 +77,4 @@
 		"sidenav footer ."
 		;
 }
-
-
 

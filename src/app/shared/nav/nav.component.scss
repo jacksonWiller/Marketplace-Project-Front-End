@@ -33,11 +33,12 @@ a, a:hover, a:focus {
   background: #fff;
   border: none;
   border-radius: 0;
-  margin-bottom: 40px;
+  margin-top: 20px;
   box-shadow: 1px 1px 3px rgb(0 0 0 / 10%);
   height: 56px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
 }
 
 
