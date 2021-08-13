@@ -1,3 +1,8 @@
+.debug {
+    border-style: solid;
+    border-color: #92a8d1;
+}
+
 /*
     DEMO STYLE
 */
@@ -24,18 +29,26 @@ a, a:hover, a:focus {
 }
 
 .navbar {
-    padding: 15px 10px;
+    /* padding: 15px 10px; */
     background: #fff;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 10%);
+    height: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
 
 .navbar-btn {
     box-shadow: none;
     outline: none !important;
     border: none;
+}
+
+.perfil-img{
+    height: 34px;
 }
 
 .line {
@@ -45,17 +58,36 @@ a, a:hover, a:focus {
     margin: 40px 0;
 }
 
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    padding-top: 0px;
+    color: #41464b;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
-.profile-image {
-    min-width: 105px;
-    max-width: 120px;
+.logo-image {
+    min-width: 2px;
+    max-width: 2px;
     border-radius: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
+}
+
+img, svg {
+    vertical-align: middle;
+    height: 80px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 67px;
 }
 
 .wrapper {
@@ -65,25 +97,15 @@ a, a:hover, a:focus {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    height: 100%;
-    background: #7386D5;
-    color: #fff;
+    min-width: 97px;
+    max-width: 97px;
+    background: white;
+    color: #41464b;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
-    position: absolute;
-    
-
-}
-#sidebar2 {
-    min-width: 250px;
-    max-width: 250px;
-    height: 100%;
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
-    transform-origin: bottom left;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 10%);
+    min-width: 82px;
+    max-width: 82px;
 }
 
 #sidebar.active {
@@ -92,24 +114,32 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    padding: 19px;
+    background: white;
+    padding: 4px;
+    padding-top: 21px;
+    text-align: center;
 }
 
 #sidebar ul.components {
-    padding: 20px 10%;
-    border-bottom: 1px solid #47748b;
+    /* padding: 20px 0; */
 }
 
 #sidebar ul p {
     color: #fff;
-    padding: 10px;
+    /* padding: 10px; */
+    color: darkslategray;
+    font-size: 10px;
+    margin: inherit;
+    font-weight: bold;
 }
 
 #sidebar ul li a {
+    text-align: center;
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 40px;
     display: block;
+    color: #41464b;
 }
 #sidebar ul li a:hover {
     color: #7386D5;
@@ -118,7 +148,6 @@ a, a:hover, a:focus {
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
 }
 
 
@@ -167,6 +196,13 @@ a.article, a.article:hover {
     color: #fff !important;
 }
 
+btn-group-vertical>.btn, .btn-group>.btn {
+    position: relative;
+    flex: 1 1 auto;
+    /* padding: 7px; */
+    margin: 10px 6px;
+}
+
 
 
 /* ---------------------------------------------------
@@ -176,6 +212,7 @@ a.article, a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    width: 100%;
 }
 
 #sidebarCollapse {
@@ -209,39 +246,4 @@ a.article, a.article:hover {
     transform: none;
     opacity: 1;
     margin: 5px auto;
-}
-
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-        transform: rotateY(90deg);
-    }
-    #sidebar.active {
-        margin-left: 0;
-        transform: none;
-    }
-    #sidebarCollapse span:first-of-type,
-    #sidebarCollapse span:nth-of-type(2),
-    #sidebarCollapse span:last-of-type {
-        transform: none;
-        opacity: 1;
-        margin: 5px auto;
-    }
-    #sidebarCollapse.active span {
-        margin: 0 auto;
-    }
-    #sidebarCollapse.active span:first-of-type {
-        transform: rotate(45deg) translate(2px, 2px);
-    }
-    #sidebarCollapse.active span:nth-of-type(2) {
-        opacity: 0;
-    }
-    #sidebarCollapse.active span:last-of-type {
-        transform: rotate(-45deg) translate(1px, -1px);
-    }
-
 }

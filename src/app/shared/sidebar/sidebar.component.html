@@ -1,22 +1,33 @@
-  <nav *ngIf="isShown" id="sidebar" ng-hide="sidebar">
-      <div class="sidebar-header">
-          <h3>TCC-GEN</h3>
-      </div>
+   
+   <nav id="sidebar">
+    <div class="sidebar-header">
+        <a href="#">
+            <img src="assets/img/CompreyLogo.png" class="img-fluid" id ="empr logo" >
+        </a>
+    </div>
+    
+    <ul class="list-unstyled components">  
+        <li>
+            <!-- <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="Disabled tooltip"></span> -->
+            <a href="#">
+                <i class="bi bi-bar-chart-line"></i>
+                <p>Painel</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bi bi-box-seam"></i>
+                <p>Produtos</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bi bi-bag-check"></i>
+                <p>Vendas</p>
+            </a>
+        </li>
+    </ul>
+    
+</nav>
 
-      <img src="face4.jpg" class="profile-image" alt="">
-
-      <ul class="list-unstyled components"> 
-          <li>
-              <a href="#">Dashboard</a>
-          </li>
-          <li>
-              <a href="#">Produtos</a>
-          </li>
-          <li>
-                <a href="#">Categorias</a>
-          </li>
-      </ul>
-  </nav>
-  <div *ngIf="isShown" id="sidebar2" ng-hide="sidebar"> 
-  </div>
 
