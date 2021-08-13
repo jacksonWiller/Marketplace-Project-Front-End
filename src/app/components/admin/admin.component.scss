@@ -36,9 +36,9 @@
 
 .grid-template-areas-1 {
 	grid-template-areas:
-		"sidenav nav ."
-		"sidenav content ."
-		"sidenav footer ."
+		"sidenav nav nav . "
+		"sidenav content content ."
+		"sidenav footer footer ."
 		;
 }
 
