@@ -1,3 +1,4 @@
+
 .wrapper {
     display: flex;
     align-items: stretch;
@@ -36,9 +37,9 @@
 
 .grid-template-areas-1 {
 	grid-template-areas:
-		"sidenav nav nav . "
-		"sidenav content content ."
-		"sidenav footer footer ."
+		"sidenav .  nav nav nav ."
+		"sidenav .  content content content ."
+		"sidenav .  footer footer footer ."
 		;
 }
 

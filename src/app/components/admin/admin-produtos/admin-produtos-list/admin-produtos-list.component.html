@@ -9,7 +9,7 @@
 
 <table class="table table-striped">
   <thead>
-      <tr>
+    <tr>
           <th scope="col">#</th>
           <th scope="col">Imagem</th>
           <th scope="col">Nome</th>
@@ -18,17 +18,17 @@
           <th scope="col">Data de Alteração</th>
           <th scope="col">Ativo</th>
           <th scope="col">Ações</th>
-      </tr>
+    </tr>
   </thead>
   <tbody>
-      <tr>
+    <tr *ngFor="let produto of produtos"  > <!-- PropertyBinding -->
           <th scope="row">1</th>
           <td>
               <a>
                   <img src="img/images.jpeg">
               </a>
           </td>
-          <td>Smartphone 11</td>
+          <td>{{produto.nome}}</td>
           <td>1300,00</td>
           <td>400</td>
           <td>05/09/2021</td>
