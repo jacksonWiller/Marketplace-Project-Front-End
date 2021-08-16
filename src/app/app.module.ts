@@ -48,6 +48,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminProdutosComponent } from './components/admin/admin-produtos/admin-produtos.component';
 import { AdminProdutosListComponent } from './components/admin/admin-produtos/admin-produtos-list/admin-produtos-list.component';
 import { AdminProdutosDetailComponent } from './components/admin/admin-produtos/admin-produtos-detail/admin-produtos-detail.component';
+import { CommonModule } from '@angular/common';
+import { AdminProdutosAddComponent } from './components/admin/admin-produtos/admin-produtos-add/admin-produtos-add.component';
     // Categotias
 
   // E-commerce
@@ -76,11 +78,13 @@ defineLocale('pt-br', ptBrLocale);
     AdminComponent,
     AdminProdutosComponent,
     AdminProdutosListComponent,
-    AdminProdutosDetailComponent
+    AdminProdutosDetailComponent,
+    AdminProdutosAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    CommonModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,

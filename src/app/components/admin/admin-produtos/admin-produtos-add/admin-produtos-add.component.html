@@ -1,0 +1,119 @@
+<!-- /////////////////////////// TESTE ///////////////////////////////////////////////////// -->
+<form [formGroup]="form" > 
+  <div class="form-row">
+    <div class=" col-md-4">
+      <label>Nome</label>
+      <input type="text" class="form-control" formControlName="nome"
+      [ngClass]="{'is-invalid': form.controls['nome'].invalid  && f.nome.touched}">
+      <div *ngIf="f.nome.hasError('required')" class="invalid-feedback" >
+        O nome é obrigatorio
+      </div>
+      <div *ngIf=" form.controls['nome'].invalid && (form.controls['nome'].dirty || form.controls['nome'].touched)"
+        class="alert alert-danger">
+      
+        <div *ngIf="form.errors?.required">
+          Name is required.
+        </div>
+        <div *ngIf="form.controls['nome'].errors?.minlength">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="form.controls['nome'].errors?.forbiddenName">
+          Name cannot be Bob.
+        </div>
+      </div>
+    </div>
+  <div class=" col-md-4">
+    <label>Descrição</label>
+    <input type="text" class="form-control" formControlName="descricao"
+    [ngClass]="{'is-invalid': form.controls['descricao'].invalid  && f.nome.touched}">
+    <div *ngIf="f.descricao.hasError('required')" class="invalid-feedback" >
+      O nome é obrigatorio
+    </div>
+    <div *ngIf=" form.controls['descricao'].invalid && (form.controls['descricao'].dirty || form.controls['descricao'].touched)"
+    class="alert alert-danger">
+    
+      <div *ngIf="form.errors?.required">
+        Name is required.
+      </div>
+      <div *ngIf="form.controls['descricao'].errors?.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="form.controls['descricao'].errors?.forbiddenName">
+        Name cannot be Bob.
+      </div>
+    </div>
+  </div>
+  <div class=" col-md-4">
+    <label>Descrição</label>
+    <input type="text" class="form-control" formControlName="observacao"
+    [ngClass]="{'is-invalid': form.controls['observacao'].invalid  && f.observacao.touched}">
+    <div *ngIf="f.observacao.hasError('required')" class="invalid-feedback" >
+      O nome é obrigatorio
+    </div>
+    <div *ngIf=" form.controls['observacao'].invalid && (form.controls['observacao'].dirty || form.controls['observacao'].touched)"
+    class="alert alert-danger">
+    
+      <div *ngIf="form.errors?.required">
+        Name is required.
+      </div>
+      <div *ngIf="form.controls['observacao'].errors?.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="form.controls['observacao'].errors?.forbiddenName">
+        Name cannot be Bob.
+      </div>
+    </div>
+  </div>
+  <div class=" col-md-4">
+    <label>Valor</label>
+    <input type="text" class="form-control" formControlName="valor"
+    [ngClass]="{'is-invalid': form.controls['valor'].invalid  && f.valor.touched}">
+    <div *ngIf="f.valor.hasError('required')" class="invalid-feedback" >
+      A quantidade é obrigatorio
+    </div>
+    <div *ngIf=" form.controls['valor'].invalid && (form.controls['valor'].dirty || form.controls['valor'].touched)"
+      class="alert alert-danger">
+      
+      <div *ngIf="form.errors?.required">
+        A quantidade is required.
+      </div>
+      <div *ngIf="form.controls['valor'].errors?.minlength">
+        A quantidade must be at least 4 characters long.
+      </div>
+      <div *ngIf="form.controls['valor'].errors?.forbiddenName">
+        A quantidade cannot be Bob.
+      </div>
+    </div> 
+  </div>
+  <div class=" col-md-4">
+    <label>Quantidade em estoque</label>
+    <input type="text" class="form-control" formControlName="quantidadeEmEstoque"
+    [ngClass]="{'is-invalid': form.controls['quantidadeEmEstoque'].invalid  && f.quantidadeEmEstoque.touched}">
+    <div *ngIf="f.quantidadeEmEstoque.hasError('required')" class="invalid-feedback" >
+      A quantidade é obrigatorio
+    </div>
+    <div *ngIf=" form.controls['quantidadeEmEstoque'].invalid && (form.controls['quantidadeEmEstoque'].dirty || form.controls['quantidadeEmEstoque'].touched)"
+      class="alert alert-danger">
+      
+      <div *ngIf="form.errors?.required">
+        A quantidade is required.
+      </div>
+      <div *ngIf="form.controls['quantidadeEmEstoque'].errors?.minlength">
+        A quantidade must be at least 4 characters long.
+      </div>
+      <div *ngIf="form.controls['quantidadeEmEstoque'].errors?.forbiddenName">
+        A quantidade cannot be Bob.
+      </div>
+    </div> 
+  </div>
+</div> 
+</form>
+<br>
+<button class="btn btn-secondary" (click)="resetForm()" >
+  Fechar
+</button>
+<button class="btn btn-primary" (click)="salvarAlteracao()">
+  Salvar Alterações
+</button>
+<br>
+<br>

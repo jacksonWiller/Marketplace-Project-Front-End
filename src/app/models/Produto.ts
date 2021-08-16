@@ -5,7 +5,7 @@ export interface Produto {
     descricao: string;
     observacao: string;
     valor: number;
-    qtdEstoque: number;
+    quantidadeEmEstoque: number;
     estado: boolean;
     dataCadastro: Date;
     dataAlteracao: Date;

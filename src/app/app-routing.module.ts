@@ -19,6 +19,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminProdutosComponent } from './components/admin/admin-produtos/admin-produtos.component';
 import { AdminProdutosListComponent } from './components/admin/admin-produtos/admin-produtos-list/admin-produtos-list.component';
 import { AdminProdutosDetailComponent } from './components/admin/admin-produtos/admin-produtos-detail/admin-produtos-detail.component';
+import { AdminProdutosAddComponent } from './components/admin/admin-produtos/admin-produtos-add/admin-produtos-add.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
         path: 'produtos', component: AdminProdutosComponent,
         children: [
           { path: 'lista', component: AdminProdutosListComponent },
+          { path: 'add', component: AdminProdutosAddComponent },
           { path: 'detalhes', component: AdminProdutosDetailComponent }
         ]
       },
