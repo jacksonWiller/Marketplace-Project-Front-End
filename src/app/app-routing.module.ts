@@ -20,6 +20,7 @@ import { AdminProdutosComponent } from './components/admin/admin-produtos/admin-
 import { AdminProdutosListComponent } from './components/admin/admin-produtos/admin-produtos-list/admin-produtos-list.component';
 import { AdminProdutosDetailComponent } from './components/admin/admin-produtos/admin-produtos-detail/admin-produtos-detail.component';
 import { AdminProdutosAddComponent } from './components/admin/admin-produtos/admin-produtos-add/admin-produtos-add.component';
+import { AdminProdutosEditComponent } from './components/admin/admin-produtos/admin-produtos-edit/admin-produtos-edit.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
         children: [
           { path: 'lista', component: AdminProdutosListComponent },
           { path: 'add', component: AdminProdutosAddComponent },
+          { path: 'edit/:id', component: AdminProdutosEditComponent },
           { path: 'detalhes', component: AdminProdutosDetailComponent }
         ]
       },

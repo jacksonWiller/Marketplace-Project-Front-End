@@ -7,11 +7,11 @@ import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-admin-produtos-add',
-  templateUrl: './admin-produtos-add.component.html',
-  styleUrls: ['./admin-produtos-add.component.scss']
+  selector: 'app-admin-produtos-edit',
+  templateUrl: './admin-produtos-edit.component.html',
+  styleUrls: ['./admin-produtos-edit.component.scss']
 })
-export class AdminProdutosAddComponent implements OnInit {
+export class AdminProdutosEditComponent implements OnInit {
 
   form!: FormGroup;
   produto = {} as Produto;
@@ -31,7 +31,7 @@ export class AdminProdutosAddComponent implements OnInit {
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.validation();
-    // this.carregarEvento();
+    this.carregarEvento();
   }
 
 
@@ -63,7 +63,7 @@ export class AdminProdutosAddComponent implements OnInit {
 
   public carregarEvento(): void {
     const produtoIdParam = this.router.snapshot.paramMap.get('id');
-
+    console.log(produtoIdParam);
     if (produtoIdParam !== null ) {
       this.produtoService.getPeodutoById(produtoIdParam).subscribe({
         next: (produto: Produto) => {

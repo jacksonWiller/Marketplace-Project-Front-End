@@ -17,10 +17,16 @@
 
 .nav {
 	grid-area: nav;
+	margin: 0% 0% 0% 8%;
+    width: 91%;
 }
 
 .content {
+	
 	grid-area: content;
+    margin: 0% 0% 0% 8%;
+    width: 91%;		
+	
 }
 
 .sidenav {
@@ -35,13 +41,20 @@
 	grid-area: footer;
 }
 
-.grid-template-areas-1 {
-	grid-template-areas:
-		"sidenav .  nav nav nav ."
-		"sidenav .  content content content ."
-		"sidenav .  footer footer footer ."
-		;
-}
+// .grid-template-areas-1 {
+// 	grid-template-areas:
+// 		"sidenav .  nav nav nav ."
+// 		"sidenav .  content content content ."
+// 		"sidenav .  footer footer footer ."
+// 		;
+// }
+
+// .grid-template-areas-1 {
+// 	grid-template-areas:
+// 	"sidenav . nav nav ."
+// 	"sidenav . content content ."
+// 	"sidenav . footer footer .";
+// }
 
 .grid-template-areas-2 {
 	grid-template-areas:

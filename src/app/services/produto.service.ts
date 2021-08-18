@@ -20,7 +20,7 @@ export class ProdutoService {
         return this.http.get<Produto[]>(`${this.baseURL}/getByTema/${tema}`);
       }
 
-      public getPeodutoById(id: number): Observable<Produto> {
+      public getPeodutoById(id: string): Observable<Produto> {
         return this.http.get<Produto>(`${this.baseURL}/${id}`);
       }
 
@@ -28,11 +28,11 @@ export class ProdutoService {
         return this.http.post<Produto>(this.baseURL, produto);
       }
 
-      public putProduto(id: number , produto: Produto): Observable<Produto> {
+      public putProduto(id: string , produto: Produto): Observable<Produto> {
         return this.http.put<Produto>(`${this.baseURL}/${id}`, produto);
       }
 
-      public deleteProduto(id: number): Observable<any> {
+      public deleteProduto(id: string): Observable<any> {
         return this.http.delete(`${this.baseURL}/${id}`);
       }
 }

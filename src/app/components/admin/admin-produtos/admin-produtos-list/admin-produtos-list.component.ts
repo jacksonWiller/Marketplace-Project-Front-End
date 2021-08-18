@@ -7,6 +7,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 import { Produto } from 'src/app/models/Produto';
 import { ProdutoService } from 'src/app/services/produto.service';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-admin-produtos-list',
@@ -17,7 +18,8 @@ export class AdminProdutosListComponent implements OnInit {
 
   public produtos: Produto[] = [];
   public modalRef!: BsModalRef;
-  public produtoId = 0;
+  public produtoId = null;
+  public rowNum = 0;
 
 
   constructor(private produtoService: ProdutoService,
@@ -27,12 +29,20 @@ export class AdminProdutosListComponent implements OnInit {
 
     ) { }
 
+
+  // tslint:disable-next-line:typedef
+  getRowNum(){
+    this.rowNum++;
+    // console.log(rowNum);
+    return this.rowNum;
+  }
+
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.carregarProdutos();
   }
 
-  openModal(event: any, template: TemplateRef<any>, produtoId: number): void {
+  openModal(event: any, template: TemplateRef<any>, produtoId: string): void {
     event.stopPropagation();
     this.produtoId = produtoId;
     this.modalRef = this.modalService.show(template);
@@ -40,7 +50,7 @@ export class AdminProdutosListComponent implements OnInit {
 
   confirm(): void {
     this.modalRef.hide();
-    this.spinner.show();
+    // this.spinner.show();
 
     this.produtoService.deleteProduto(this.produtoId).subscribe(
 

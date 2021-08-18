@@ -21,8 +21,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let produto of produtos"  > <!-- PropertyBinding -->
-          <th scope="row">1</th>
+    <tr *ngFor="let produto of produtos; let i= index"  > <!-- PropertyBinding -->
+          <th scope="row">{{getRowNum()}}</th>
           <td>
               <a>
                   <img src="img/images.jpeg">
@@ -43,59 +43,21 @@
               <a href="#" class="btn btn-outline-success">
                   <i class="bi bi-pencil-fill"></i>
               </a>
-              <a href="#" class="btn btn-outline-danger">
-                  <i class="bi bi-trash"></i>
+              <a  class="btn btn-outline-danger" (click)="openModal($event,delete, produto.id)" tooltip="Deletar">
+                  <i class="bi bi-trash">
+
+                  </i>
               </a>
           </td>
       </tr>
-      <tr>
-          <th scope="row">1</th>
-          <td>
-              <a>
-                  <img src="img/images.jpeg">
-              </a>
-          </td>
-          <td>Smartphone 11</td>
-          <td>1300,00</td>
-          <td>400</td>
-          <td>05/09/2021</td>
-          <td><i class="bi bi-x-lg"></i></td>
-          <td>
-              <a href="#" class="btn btn-outline-primary">
-                  <i class="bi bi-eye"></i>
-              </a>
-              <a href="#" class="btn btn-outline-success">
-                  <i class="bi bi-pencil-fill"></i>
-              </a>
-              <a href="#" class="btn btn-outline-danger">
-                  <i class="bi bi-trash"></i>
-              </a>
-          </td>
-      </tr>
-      <tr>
-          <th scope="row">1</th>
-          <td>
-              <a>
-                  <img src="img/images.jpeg">
-              </a>
-          </td>
-          <td>Smartphone 11</td>
-          <td>1300,00</td>
-          <td>400</td>
-          <td>05/09/2021</td>
-          <td><i class="bi bi-x-lg"></i></td>
-          <td>
-              <a href="#" class="btn btn-outline-primary"
-              data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top" >
-              <i class="bi bi-eye"></i>
-          </a>
-          <a href="#" class="btn btn-outline-success">
-              <i class="bi bi-pencil-fill"></i>
-          </a>
-          <a href="#" class="btn btn-outline-danger">
-              <i class="bi bi-trash"></i>
-          </a>
-      </td>
-  </tr>
+
 </tbody>
 </table>
+
+<ng-template #delete>
+    <div class="modal-body text-center">
+      <p>Do you want to delete {{produtoId}}</p>
+      <button type="button" class="btn btn-default" (click)="confirm()">Sim </button>
+      <button type="button" class="btn btn-danger" (click)="decline()">Não </button>
+    </div>
+</ng-template>

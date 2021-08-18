@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -48,8 +49,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminProdutosComponent } from './components/admin/admin-produtos/admin-produtos.component';
 import { AdminProdutosListComponent } from './components/admin/admin-produtos/admin-produtos-list/admin-produtos-list.component';
 import { AdminProdutosDetailComponent } from './components/admin/admin-produtos/admin-produtos-detail/admin-produtos-detail.component';
-import { CommonModule } from '@angular/common';
 import { AdminProdutosAddComponent } from './components/admin/admin-produtos/admin-produtos-add/admin-produtos-add.component';
+import { AdminProdutosEditComponent } from './components/admin/admin-produtos/admin-produtos-edit/admin-produtos-edit.component';
     // Categotias
 
   // E-commerce
@@ -79,7 +80,8 @@ defineLocale('pt-br', ptBrLocale);
     AdminProdutosComponent,
     AdminProdutosListComponent,
     AdminProdutosDetailComponent,
-    AdminProdutosAddComponent
+    AdminProdutosAddComponent,
+    AdminProdutosEditComponent
   ],
   imports: [
     BrowserModule,
