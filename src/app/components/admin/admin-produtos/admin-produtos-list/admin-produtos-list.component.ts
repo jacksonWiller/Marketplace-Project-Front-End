@@ -7,7 +7,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 import { Produto } from 'src/app/models/Produto';
 import { ProdutoService } from 'src/app/services/produto.service';
-import { Console } from 'console';
+
 
 @Component({
   selector: 'app-admin-produtos-list',
@@ -28,14 +28,6 @@ export class AdminProdutosListComponent implements OnInit {
               private spinner: NgxSpinnerService
 
     ) { }
-
-
-  // tslint:disable-next-line:typedef
-  getRowNum(){
-    this.rowNum++;
-    // console.log(rowNum);
-    return this.rowNum;
-  }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {

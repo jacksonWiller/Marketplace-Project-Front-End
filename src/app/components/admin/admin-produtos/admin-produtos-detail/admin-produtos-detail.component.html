@@ -1,3 +1,35 @@
-<p>
-  admin-produtos-detail works!
-</p>
+<!-- /////////////////////////// TESTE ///////////////////////////////////////////////////// -->
+<div class="row form-container" > 
+  
+  <div class="col-6 " >
+      <figure class="figure">
+        <img src="assets/img/produto-detalhe.jpg" class="figure-img img-fluid rounded img-fluid produto-detalhe" alt="...">
+        <figcaption class="figure-caption">Imagem do produto.</figcaption>
+      </figure>
+    
+  </div>
+  
+  <div class="col-6" >
+    
+    <div class="">
+      <p for="validationServer01" class="form-label"> Id do produto: {{produto.id}} </p>
+      <p for="validationServer01" class="form-label"> Nome do produto: {{produto.nome}} </p>
+      <p for="validationServer01" class="form-label"> Valor: {{produto.valor}} </p>
+      <p for="validationServer01" class="form-label"> Quantidade em estoque: {{produto.quantidadeEmEstoque}} </p>
+      <p for="validationServer01" class="form-label"> Estado: {{produto.estado}} </p>
+      <p for="validationServer01" class="form-label"> Data de cadastro: {{produto.dataCadastro}} </p>
+      <p for="validationServer01" class="form-label"> Data de alteração: {{produto.dataAlteracao}} </p>
+      <p for="validationServer01" class="form-label"> Descrição: {{produto.descricao}} </p>
+      <p for="validationServer01" class="form-label"> Observação: {{produto.observacao}} </p>
+      
+    </div>
+
+    <a routerLink="/admin/produtos/add" class="btn btn-outline-primary" routerLink="/admin/produtos/list">
+      <!-- <i class="bi bi-plus-lg"></i> -->
+      Voltar
+  </a>
+
+  </div>
+</div>
+  
+

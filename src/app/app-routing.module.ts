@@ -29,10 +29,10 @@ const routes: Routes = [
       {
         path: 'produtos', component: AdminProdutosComponent,
         children: [
-          { path: 'lista', component: AdminProdutosListComponent },
+          { path: 'list', component: AdminProdutosListComponent },
           { path: 'add', component: AdminProdutosAddComponent },
           { path: 'edit/:id', component: AdminProdutosEditComponent },
-          { path: 'detalhes', component: AdminProdutosDetailComponent }
+          { path: 'detail/:id', component: AdminProdutosDetailComponent }
         ]
       },
       { path: 'categorias', component: RegistrationComponent },

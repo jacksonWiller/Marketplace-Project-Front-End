@@ -1,6 +1,6 @@
 <div class="btn-group">
             
-  <a href="#" class="btn btn-outline-primary">
+  <a routerLink="/admin/produtos/add" class="btn btn-outline-primary">
       <i class="bi bi-plus-lg"></i>
       Adicionar
   </a>
@@ -21,8 +21,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let produto of produtos; let i= index"  > <!-- PropertyBinding -->
-          <th scope="row">{{getRowNum()}}</th>
+    <tr *ngFor="let produto of produtos; let i = index"  > <!-- PropertyBinding -->
+          <th scope="row">{{i + 1}}</th>
           <td>
               <a>
                   <img src="img/images.jpeg">
@@ -37,10 +37,10 @@
               <i *ngIf="produto.estado == false || null" class="bi bi-x-lg"></i>
           </td>
           <td>
-              <a href="#" class="btn btn-outline-primary">
+              <a class="btn btn-outline-primary" routerLink="/admin/produtos/detail/{{produto.id}}">
                   <i class="bi bi-eye"></i>
               </a>
-              <a href="#" class="btn btn-outline-success">
+              <a class="btn btn-outline-success" routerLink="/admin/produtos/edit/{{produto.id}}">
                   <i class="bi bi-pencil-fill"></i>
               </a>
               <a  class="btn btn-outline-danger" (click)="openModal($event,delete, produto.id)" tooltip="Deletar">
