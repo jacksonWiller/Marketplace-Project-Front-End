@@ -24,8 +24,9 @@
     <tr *ngFor="let produto of produtos; let i = index"  > <!-- PropertyBinding -->
           <th scope="row">{{i + 1}}</th>
           <td>
-              <a>
-                  <img src="img/images.jpeg">
+              <a >
+                  <img class="produto-image" src="https://localhost:5001/Resources/Images/{{produto.imagemURL}}">
+                  <!-- <img class="produto-image" src="assets/foto3.jpg"> -->
               </a>
           </td>
           <td>{{produto.nome}}</td>

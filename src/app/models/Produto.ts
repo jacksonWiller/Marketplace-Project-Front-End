@@ -5,6 +5,7 @@ export interface Produto {
     observacao: string;
     valor: number;
     quantidadeEmEstoque: number;
+    imagemURL: string;
     estado: boolean;
     dataCadastro: Date;
     dataAlteracao: Date;

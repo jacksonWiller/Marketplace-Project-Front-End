@@ -5,12 +5,12 @@
     
     <div class="">
       <figure class="figure">
-        <img src="assets/img/produto-detalhe.jpg" class="figure-img img-fluid rounded img-fluid produto-detalhe" alt="...">
+        <img [src] = "imagemURL" (click)="file.click()"  class="figure-img img-fluid rounded img-fluid produto-detalhe" alt="...">
         <figcaption class="figure-caption">A caption for the above image.</figcaption>
       </figure>
       <div class="">
         <label for="formFile" class="form-label">Escolha uma Imagem.</label>
-        <input class="form-control" type="file" id="formFile">
+        <input class="form-control" #file (change)="onFileChange($event)" type="file" id="formFile">
       </div>
     </div>
   </div>

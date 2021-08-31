@@ -15,7 +15,10 @@ export class AdminProdutosEditComponent implements OnInit {
 
   form!: FormGroup;
   produto = {} as Produto;
-
+  produtoId = '';
+  estadoSalvar = 'post';
+  imagemURL = 'assets/img/images.jpeg';
+  file: File;
 
   get f(): any {
     return this.form.controls;
@@ -62,10 +65,11 @@ export class AdminProdutosEditComponent implements OnInit {
   }
 
   public carregarEvento(): void {
-    const produtoIdParam = this.router.snapshot.paramMap.get('id');
-    console.log(produtoIdParam);
-    if (produtoIdParam !== null ) {
-      this.produtoService.getPeodutoById(produtoIdParam).subscribe({
+    console.log(this.imagemURL);
+    this.produtoId = this.router.snapshot.paramMap.get('id');
+    console.log(this.produtoId);
+    if (this.produtoId !== null ) {
+      this.produtoService.getPeodutoById(this.produtoId).subscribe({
         next: (produto: Produto) => {
           this.produto = {...produto}; // copiando produto e não apotando para o espaço de memoria
           this.form.patchValue(this.produto);
@@ -114,6 +118,32 @@ export class AdminProdutosEditComponent implements OnInit {
 
   public resetForm(): void{
 
+  }
+
+
+  onFileChange(ev: any): void {
+    const reader = new FileReader();
+
+    reader.onload = (event: any) => this.imagemURL = event.target.result;
+
+    this.file = ev.target.files;
+    reader.readAsDataURL(this.file[0]);
+
+    this.uploadImagem();
+  }
+
+  uploadImagem(): void {
+    this.spinner.show();
+    this.produtoService.postUpload(this.produtoId, this.file).subscribe(
+      () => {
+        this.carregarEvento();
+        this.toastr.success('Imagem atualizada com Sucesso', 'Sucesso!');
+      },
+      (error: any) => {
+        this.toastr.error('Erro ao fazer upload de imagem', 'Erro!');
+        console.log(error);
+      }
+    ).add(() => this.spinner.hide());
   }
 
 }
