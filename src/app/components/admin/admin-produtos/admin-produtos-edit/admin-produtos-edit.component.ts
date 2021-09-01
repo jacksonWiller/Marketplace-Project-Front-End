@@ -134,6 +134,7 @@ export class AdminProdutosEditComponent implements OnInit {
 
   uploadImagem(): void {
     this.spinner.show();
+    console.log(this.file);
     this.produtoService.postUpload(this.produtoId, this.file).subscribe(
       () => {
         this.carregarEvento();
