@@ -17,7 +17,7 @@ export class AdminProdutosEditComponent implements OnInit {
   produto = {} as Produto;
   produtoId = '';
   estadoSalvar = 'post';
-  imagemURL = 'assets/img/images.jpeg';
+  imagemURL = '';
   file: File;
 
   get f(): any {
@@ -73,6 +73,7 @@ export class AdminProdutosEditComponent implements OnInit {
         next: (produto: Produto) => {
           this.produto = {...produto}; // copiando produto e não apotando para o espaço de memoria
           this.form.patchValue(this.produto);
+          this.imagemURL = 'https://localhost:5001/Resources/Images/' + this.produto.imagemURL;
         },
         error: (error: any) => {
           console.error(error);
@@ -92,7 +93,10 @@ export class AdminProdutosEditComponent implements OnInit {
 
       if (produtoIdParam !== null ){
         this.produtoService.putProduto(produtoIdParam , this.produto).subscribe(
-          () => this.toastr.success('Produto salvo com sucesso!', 'Sucesso'),
+          () => {
+            this.toastr.success('Produto salvo com sucesso!', 'Sucesso');
+            this.uploadImagem();
+          },
           (error: any) => {
             console.error(error);
             console.log(this.produto);
@@ -129,7 +133,7 @@ export class AdminProdutosEditComponent implements OnInit {
     this.file = ev.target.files;
     reader.readAsDataURL(this.file[0]);
 
-    this.uploadImagem();
+
   }
 
   uploadImagem(): void {
@@ -138,7 +142,7 @@ export class AdminProdutosEditComponent implements OnInit {
     this.produtoService.postUpload(this.produtoId, this.file).subscribe(
       () => {
         this.carregarEvento();
-        this.toastr.success('Imagem atualizada com Sucesso', 'Sucesso!');
+        // this.toastr.success('Imagem atualizada com Sucesso', 'Sucesso!');
       },
       (error: any) => {
         this.toastr.error('Erro ao fazer upload de imagem', 'Erro!');
